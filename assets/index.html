@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Zaika Tulsi - Flavours of India</title>
+  <meta name="description" content="Zaika Tulsi serves authentic Indian food with homemade taste. Tandoor, Chinese, snacks, combos, and family meals. Hygienic, preservative free, farm fresh." />
+  <meta name="theme-color" content="#0f3e2b" />
+  <link rel="icon" href="/assets/favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              green: '#0f3e2b',
+              light: '#e9f5ee',
+              gold: '#f4a300',
+              cream: '#fff6e5'
+            }
+          },
+          fontFamily: { body: ['Poppins','ui-sans-serif','system-ui'] },
+          boxShadow: { soft: '0 10px 30px rgba(0,0,0,.08)' }
+        }
+      }
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    .fade { opacity: 0; transform: translateY(10px); transition: all .6s ease; }
+    .fade.show { opacity: 1; transform: none; }
+    .slide { position: absolute; inset: 0; opacity: 0; transition: opacity .8s ease; }
+    .slide.active { opacity: 1; }
+  </style>
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "Zaika Tulsi",
+    "address": {"@type":"PostalAddress","streetAddress":"HEWO-1, GH-42, Shop No.3, Ground Floor, Sec-56","addressLocality":"Gurugram","addressRegion":"HR","addressCountry":"IN"},
+    "telephone": "+91 8930965145",
+    "servesCuisine": ["Indian","Chinese","Tandoori","Snacks"],
+    "priceRange": "₹₹",
+    "url": "https://example.com",
+    "sameAs": ["https://instagram.com/zaikatulsi"]
+  }
+  </script>
+</head>
+<body class="font-body bg-brand-cream text-brand-green">
+  <!-- Top strip -->
+  <div class="bg-brand-green text-white text-sm text-center py-2">Free home delivery within 2 km. Call <a class="underline" href="tel:+918930965145">+91 8930965145</a> or <a class="underline" href="tel:+919560755911">+91 9560755911</a></div>
+
+  <!-- Header -->
+  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <a href="#home" class="flex items-center gap-3">
+        <img src="assets/logo.png" alt="Zaika Tulsi logo" class="h-9 w-9 object-contain" onerror="this.src='https://dummyimage.com/48x48/0f3e2b/ffffff&text=ZT'"/>
+        <div>
+          <div class="text-lg font-semibold leading-tight">Zaika Tulsi</div>
+          <div class="text-[11px] uppercase tracking-widest text-brand-green/70">Taste with tradition</div>
+        </div>
+      </a>
+      <nav class="hidden md:flex items-center gap-6 text-sm">
+        <a href="#menu" class="hover:text-brand-green/80">Menu</a>
+        <a href="#specials" class="hover:text-brand-green/80">Specials</a>
+        <a href="#combos" class="hover:text-brand-green/80">Combos</a>
+        <a href="#snacks" class="hover:text-brand-green/80">Snacks</a>
+        <a href="#gallery" class="hover:text-brand-green/80">Gallery</a>
+        <a href="#contact" class="hover:text-brand-green/80">Contact</a>
+        <a href="https://wa.me/918930965145?text=Hi%20Zaika%20Tulsi%2C%20I%20want%20to%20order" class="ml-2 inline-flex items-center gap-2 rounded-full bg-brand-gold text-white px-4 py-2 shadow-soft hover:opacity-90">
+          Order on WhatsApp
+        </a>
+      </nav>
+      <button id="navBtn" class="md:hidden p-2 rounded-lg hover:bg-brand-light/60" aria-label="Toggle menu">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+    <div id="navMobile" class="md:hidden hidden border-t bg-white">
+      <div class="px-4 py-3 flex flex-col gap-3 text-sm">
+        <a href="#menu">Menu</a>
+        <a href="#specials">Specials</a>
+        <a href="#combos">Combos</a>
+        <a href="#snacks">Snacks</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
+        <a href="https://wa.me/918930965145?text=Hi%20Zaika%20Tulsi%2C%20I%20want%20to%20order" class="inline-flex items-center justify-center gap-2 rounded-full bg-brand-gold text-white px-4 py-2 shadow-soft">Order on WhatsApp</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero with slider using your flyers -->
+  <section id="home" class="relative h-[70vh] min-h-[440px]">
+    <div class="absolute inset-0">
+      <div class="slide active">
+        <img class="w-full h-full object-cover" src="assets/flyer-highlight-tandoor.jpg" alt="Tandoor Tikkas and Chaap Special" onerror="this.src='https://images.unsplash.com/photo-1525755662778-989d0524087e?q=80&w=2000&auto=format&fit=crop'"/>
+        <div class="absolute inset-0 bg-black/50"></div>
+      </div>
+      <div class="slide">
+        <img class="w-full h-full object-cover" src="assets/flyer-rajma.jpg" alt="Rajma Chawal 139" onerror="this.src='https://images.unsplash.com/photo-1625944520574-5f8610de3807?q=80&w=2000&auto=format&fit=crop'"/>
+        <div class="absolute inset-0 bg-black/45"></div>
+      </div>
+      <div class="slide">
+        <img class="w-full h-full object-cover" src="assets/flyer-chinese.jpg" alt="Chinese Food" onerror="this.src='https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=2000&auto=format&fit=crop'"/>
+        <div class="absolute inset-0 bg-black/45"></div>
+      </div>
+    </div>
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center">
+      <div class="text-white max-w-2xl">
+        <span class="inline-block text-xs tracking-widest uppercase bg-white/20 px-3 py-1 rounded-full">Zaika Tulsi signature</span>
+        <h1 class="mt-4 text-4xl sm:text-5xl font-extrabold leading-tight">Food made with love. Flavours that feel like home.</h1>
+        <p class="mt-3 text-lg">Authentic Indian, Chinese, Tandoori, and snacks. Hygienic, fresh, and full of aroma.</p>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <a href="#menu" class="inline-flex items-center gap-2 rounded-full bg-brand-gold text-white px-5 py-3 shadow-soft hover:opacity-90">Explore Menu</a>
+          <a href="https://wa.me/918930965145?text=Hi%20Zaika%20Tulsi%2C%20I%20want%20to%20order" class="inline-flex items-center gap-2 rounded-full bg-white/15 px-5 py-3 backdrop-blur hover:bg-white/25">Order on WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Specials using flyers -->
+  <section id="specials" class="py-16 sm:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-end justify-between gap-6">
+        <div>
+          <h2 class="text-3xl font-bold">Today's Highlights</h2>
+          <p class="text-brand-green/80">Handpicked by our chef for maximum happiness.</p>
+        </div>
+        <a href="#contact" class="hidden sm:inline-flex items-center gap-2 rounded-full bg-brand-green text-white px-4 py-2 shadow-soft hover:opacity-90">Call to Order</a>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6 mt-8">
+        <article class="rounded-2xl overflow-hidden bg-brand-light shadow-soft fade">
+          <img src="assets/flyer-highlight-tandoor.jpg" alt="Tandoor Tikkas and Chaap" class="h-44 w-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1630382735383-e0d5b5e6c5a2?q=80&w=1200&auto=format&fit=crop'" />
+          <div class="p-5">
+            <h3 class="font-semibold">Tandoor - Tikkas and Chaap</h3>
+            <p class="text-sm text-brand-green/80">Smoky. Juicy. Perfect with mint chutney.</p>
+          </div>
+        </article>
+        <article class="rounded-2xl overflow-hidden bg-brand-light shadow-soft fade">
+          <img src="assets/flyer-rajma.jpg" alt="Rajma Chawal" class="h-44 w-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1617191518601-f8e00f9f3dc8?q=80&w=1200&auto=format&fit=crop'" />
+          <div class="p-5">
+            <h3 class="font-semibold">Rajma Chawal - ₹139</h3>
+            <p class="text-sm text-brand-green/80">Comfort bowl that fixes a tired mind and body.</p>
+          </div>
+        </article>
+        <article class="rounded-2xl overflow-hidden bg-brand-light shadow-soft fade">
+          <img src="assets/flyer-chinese.jpg" alt="Chinese Food" class="h-44 w-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=1200&auto=format&fit=crop'" />
+          <div class="p-5">
+            <h3 class="font-semibold">Chinese Specials</h3>
+            <p class="text-sm text-brand-green/80">Noodles, fried rice, manchurian, chilli paneer, and more.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Menu section with tabs and dynamic render -->
+  <section id="menu" class="py-16 sm:py-24 bg-brand-light/50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold">Menu</h2>
+      <p class="text-brand-green/80">Authentic recipes. Freshly prepared. Preservative free.</p>
+
+      <div class="mt-6 flex flex-wrap gap-2">
+        <button class="menu-tab px-4 py-2 rounded-full bg-white shadow-soft text-sm font-medium" data-cat="veg">Vegetarian</button>
+        <button class="menu-tab px-4 py-2 rounded-full bg-white shadow-soft text-sm font-medium" data-cat="nonveg">Non Veg</button>
+        <button class="menu-tab px-4 py-2 rounded-full bg-white shadow-soft text-sm font-medium" data-cat="tandoor">Tandoori</button>
+        <button class="menu-tab px-4 py-2 rounded-full bg-white shadow-soft text-sm font-medium" data-cat="breads">Breads</button>
+        <button class="menu-tab px-4 py-2 rounded-full bg-white shadow-soft text-sm font-medium" data-cat="chinese">Chinese</button>
+        <button class="menu-tab px-4 py-2 rounded-full bg-white shadow-soft text-sm font-medium" data-cat="momos">Momos</button>
+        <button class="menu-tab px-4 py-2 rounded-full bg-white shadow-soft text-sm font-medium" data-cat="snacks">Snacks</button>
+      </div>
+
+      <div id="menuGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-6"></div>
+
+      <div class="mt-8 flex flex-wrap items-center gap-3">
+        <button id="viewMenuImages" class="inline-flex items-center gap-2 rounded-full bg-brand-green text-white px-4 py-2 shadow-soft">View full menu</button>
+        <span class="text-sm text-brand-green/70">Best for quick browse. Prices in INR.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Combos -->
+  <section id="combos" class="py-16 sm:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold">Two Good Combos</h2>
+      <p class="text-brand-green/80">Choose any two to make your perfect meal.</p>
+      <div class="grid md:grid-cols-3 gap-6 mt-8">
+        <div class="rounded-2xl bg-brand-light p-6 shadow-soft">
+          <h3 class="font-semibold">Ajwain Paratha + Paneer Butter Masala</h3>
+          <p class="text-sm text-brand-green/80 mt-2">Rich, buttery gravy with the aroma of ajwain.</p>
+        </div>
+        <div class="rounded-2xl bg-brand-light p-6 shadow-soft">
+          <h3 class="font-semibold">Plain Paratha + Daal</h3>
+          <p class="text-sm text-brand-green/80 mt-2">Simple and satisfying. Pure comfort.</p>
+        </div>
+        <div class="rounded-2xl bg-brand-light p-6 shadow-soft">
+          <h3 class="font-semibold">Fried Rice or Noodles + Chilli Paneer or Chilli Chicken</h3>
+          <p class="text-sm text-brand-green/80 mt-2">Crowd favorite combo. Ask for today price.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Snacks pre-order window -->
+  <section id="snacks" class="py-16 sm:py-24 bg-brand-light/50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-2 gap-10 items-center">
+        <div>
+          <h2 class="text-3xl font-bold">Snacks - Pre order 5 pm to 10 pm</h2>
+          <ul class="mt-4 grid grid-cols-2 gap-2 text-sm">
+            <li>Mixed Pakoras</li>
+            <li>Bread Pakoras</li>
+            <li>Paneer Pakoras</li>
+            <li>Rolls</li>
+            <li>Chowmein</li>
+            <li>Veg Burgers</li>
+            <li>Fries</li>
+            <li>Vada Pav</li>
+            <li>Tawa Parathas</li>
+            <li>Tandoori Parathas</li>
+            <li>Paneer</li>
+            <li>Soya Chaap</li>
+            <li>Mixed Vegetables</li>
+            <li>Mushrooms</li>
+          </ul>
+          <div class="mt-5 flex gap-3">
+            <a href="https://wa.me/918930965145?text=Snacks%20pre%20order%20for%20today" class="inline-flex items-center gap-2 rounded-full bg-brand-gold text-white px-4 py-2 shadow-soft">Chat on WhatsApp</a>
+            <button id="seeSnacksPoster" class="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 shadow-soft">See poster</button>
+          </div>
+        </div>
+        <div class="rounded-2xl overflow-hidden bg-white shadow-soft">
+          <img src="assets/flyer-snacks.jpg" alt="Snacks poster" class="w-full h-80 object-cover" onerror="this.src='https://images.unsplash.com/photo-1604908554049-06259eaa06af?q=80&w=1600&auto=format&fit=crop'"/>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery / Menu images with lightbox -->
+  <section id="gallery" class="py-16 sm:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold">Gallery and Menu</h2>
+      <p class="text-brand-green/80">Tap to enlarge.</p>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-6">
+        <img class="rounded-xl h-56 w-full object-cover cursor-pointer lightbox" src="assets/menu-veg-tandoor.jpg" alt="Veg and Tandoor menu" onerror="this.src='https://images.unsplash.com/photo-1587049352851-8d4e89133924?q=80&w=1200&auto=format&fit=crop'"/>
+        <img class="rounded-xl h-56 w-full object-cover cursor-pointer lightbox" src="assets/menu-snacks-chinese.jpg" alt="Snacks Chinese Momos menu" onerror="this.src='https://images.unsplash.com/photo-1596797038530-2c1072297c83?q=80&w=1200&auto=format&fit=crop'"/>
+        <img class="rounded-xl h-56 w-full object-cover cursor-pointer lightbox" src="assets/flyer-contact.jpg" alt="Contact poster" onerror="this.src='https://images.unsplash.com/photo-1525755662778-989d0524087e?q=80&w=1200&auto=format&fit=crop'"/>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-16 sm:py-24 bg-brand-green text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-2 gap-10 items-center">
+        <div>
+          <h2 class="text-3xl font-bold">Order or Visit</h2>
+          <p class="mt-2">Free home delivery within 2 km. Party and get together orders welcome. Pax 30 and above get 8 percent discount on total bill.</p>
+          <div class="mt-5 space-y-2 text-sm/relaxed">
+            <p><strong>Phone:</strong> <a class="underline" href="tel:+918930965145">+91 8930965145</a>, <a class="underline" href="tel:+919560755911">+91 9560755911</a></p>
+            <p><strong>WhatsApp:</strong> <a class="underline" href="https://wa.me/918930965145?text=Hi%20Zaika%20Tulsi%2C%20I%20want%20to%20order">Chat now</a></p>
+            <p><strong>Address:</strong> HEWO-1, GH-42, Shop No.3, Ground Floor, Sec-56, Gurugram</p>
+            <p><strong>Timings:</strong> Open daily. Snacks window 5 pm to 10 pm.</p>
+          </div>
+          <div class="mt-5 flex gap-3">
+            <a href="https://wa.me/918930965145?text=Hi%20Zaika%20Tulsi%2C%20I%20want%20to%20order" class="inline-flex items-center gap-2 rounded-full bg-brand-gold text-white px-5 py-3 shadow-soft">Order on WhatsApp</a>
+            <a href="tel:+918930965145" class="inline-flex items-center gap-2 rounded-full bg-white/10 px-5 py-3">Call now</a>
+          </div>
+        </div>
+        <div class="rounded-2xl overflow-hidden shadow-soft bg-white">
+          <iframe title="Map" class="w-full h-80" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps?q=Sector%2056%20Gurugram&output=embed"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-white border-t">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="text-sm text-brand-green/80">© <span id="year"></span> Zaika Tulsi. Quality and hygiene is our strength. Serving tasty food is our passion.</div>
+      <div class="flex gap-3 text-sm">
+        <a href="#menu" class="hover:text-brand-green">Menu</a>
+        <a href="#contact" class="hover:text-brand-green">Contact</a>
+        <a href="https://instagram.com/zaikatulsi" class="hover:text-brand-green">Instagram</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp -->
+  <a href="https://wa.me/918930965145?text=Hi%20Zaika%20Tulsi%2C%20I%20want%20to%20order" class="fixed bottom-5 right-5 rounded-full bg-green-500 text-white px-4 py-3 shadow-lg hover:opacity-90" aria-label="WhatsApp order">WhatsApp</a>
+
+  <!-- Lightbox modal -->
+  <div id="lightbox" class="fixed inset-0 bg-black/70 items-center justify-center hidden z-[60]">
+    <img id="lightboxImg" class="max-h-[90vh] max-w-[90vw] rounded-xl shadow-2xl" alt="Large view" />
+  </div>
+
+  <script>
+    // Mobile nav
+    document.getElementById('navBtn').addEventListener('click',()=>{
+      document.getElementById('navMobile').classList.toggle('hidden');
+    });
+
+    // Fade in on scroll
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('show'); });
+    },{ threshold: .2 });
+    document.querySelectorAll('.fade').forEach(el=>io.observe(el));
+
+    // Simple slider
+    const slides = document.querySelectorAll('.slide');
+    let s = 0; setInterval(()=>{ slides[s].classList.remove('active'); s = (s+1)%slides.length; slides[s].classList.add('active'); }, 5000);
+
+    // Lightbox for gallery and menu images
+    const lb = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lightboxImg');
+    function openLB(src){ lbImg.src = src; lb.classList.remove('hidden'); lb.classList.add('flex'); }
+    function closeLB(){ lb.classList.add('hidden'); lb.classList.remove('flex'); lbImg.src=''; }
+    document.querySelectorAll('.lightbox').forEach(img=>img.addEventListener('click',()=>openLB(img.src)));
+    lb.addEventListener('click', closeLB);
+    document.getElementById('viewMenuImages').addEventListener('click',()=>openLB('assets/menu-veg-tandoor.jpg'));
+    document.getElementById('seeSnacksPoster').addEventListener('click',()=>openLB('assets/flyer-snacks.jpg'));
+
+    // Menu data
+    const MENU = {
+      veg: [
+        ['Yellow Dal Tarka',210], ['Dal Makhani',250], ['Pindi Chole or Rajma',250],
+        ['Mixed Vegetable',250], ['Soya Chaap Masala',290], ['Mushroom Masala',310],
+        ['Shahi Paneer',310], ['Kadhai Paneer',330], ['Paneer Do Pyaza',330],
+        ['Paneer Lababdar',330], ['Paneer Butter Masala',330], ['Matar Paneer',280],
+        ['Palak Paneer',310], ['Malai Kofta 5 pcs',330]
+      ],
+      nonveg: [
+        ['Egg Curry',260], ['Chicken Curry 4 pcs',340], ['Butter Chicken',380],
+        ['Kadhai Chicken',350], ['Chicken Masala',330], ['Handi Chicken',480],
+        ['Bhuna Chicken',380], ['Tawa Chicken',350]
+      ],
+      tandoor: [
+        ['Paneer Tikka',300], ['Malai Paneer Tikka',340], ['Tandoori Masala Chaap',280],
+        ['Tandoori Malai Chaap',280], ['Tandoori Achari Chaap',250], ['Tandoori Mushroom Tikka',280]
+      ],
+      breads: [
+        ['Tandoori Roti',15], ['Butter Roti',20], ['Plain Naan',40], ['Butter Naan',60],
+        ['Garlic Naan',60], ['Lachha Paratha',55], ['Tandoori Aloo Paratha',90],
+        ['Mixed Paratha',120], ['Pyaz Paratha',140]
+      ],
+      chinese: [
+        ['Veg Fried Rice',180], ['Veg Manchurian',280], ['Chilli Paneer',299],
+        ['Chilli Mushroom',199], ['Honey Chilli Potato',200], ['Chicken Manchurian',300],
+        ['Egg Fried Rice',200], ['Chicken Fried Rice',330], ['Egg Chicken Fried Rice',340],
+        ['Chilli Chicken 8 pcs',330], ['Veg Noodles',130], ['Singapore Noodles veg',160],
+        ['Singapore Noodles chicken',180], ['Egg Hakka Noodles',170], ['Chicken Hakka Noodles',240]
+      ],
+      momos: [
+        ['Veg Momos 8 pcs',110], ['Paneer Momos 8 pcs',140], ['Chicken Momos 8 pcs',199],
+        ['Cheese Corn Momos 8 pcs',180], ['Kurkure Veg Momos',180], ['Kurkure Chicken Momos',250]
+      ],
+      snacks: [
+        ['Masala Chai',15], ['Vada Pav',70], ['Veg Burger',70], ['Chicken Burger',90],
+        ['French Fries peri peri',99], ['Bread Pakora',35], ['Mix Veg Pakora plate',80], ['Crispy Corn',210]
+      ]
+    };
+
+    function renderMenu(cat){
+      const grid = document.getElementById('menuGrid');
+      grid.innerHTML = '';
+      (MENU[cat]||[]).forEach(([name, price])=>{
+        const card = document.createElement('div');
+        card.className = 'rounded-2xl bg-white p-5 shadow-soft';
+        card.innerHTML = `<div class="flex items-baseline justify-between gap-3"><h3 class="font-medium">${name}</h3><div class="text-brand-green/80 font-semibold">₹ ${price}</div></div>`;
+        grid.appendChild(card);
+      });
+    }
+
+    document.querySelectorAll('.menu-tab').forEach(b=>{
+      b.addEventListener('click',()=>{
+        document.querySelectorAll('.menu-tab').forEach(x=>x.classList.remove('bg-brand-gold','text-white'));
+        b.classList.add('bg-brand-gold','text-white');
+        renderMenu(b.dataset.cat);
+      });
+    });
+
+    // initial
+    const firstTab = document.querySelector('.menu-tab');
+    firstTab.classList.add('bg-brand-gold','text-white');
+    renderMenu(firstTab.dataset.cat);
+
+    // Footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
